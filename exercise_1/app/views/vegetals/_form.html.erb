@@ -1,0 +1,37 @@
+<%= form_with(model: vegetal, local: true) do |form| %>
+  <% if vegetal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vegetal.errors.count, "error") %> prohibited this vegetal from being saved:</h2>
+
+      <ul>
+      <% vegetal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :vegetal_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color, id: :vegetal_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.text_field :weight, id: :vegetal_weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :vegetal_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

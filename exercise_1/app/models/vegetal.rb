@@ -1,0 +1,2 @@
+class Vegetal < ApplicationRecord
+end

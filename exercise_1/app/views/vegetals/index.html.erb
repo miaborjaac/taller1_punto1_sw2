@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vegetals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Color</th>
+      <th>Weight</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vegetals.each do |vegetal| %>
+      <tr>
+        <td><%= vegetal.name %></td>
+        <td><%= vegetal.color %></td>
+        <td><%= vegetal.weight %></td>
+        <td><%= vegetal.price %></td>
+        <td><%= link_to 'Show', vegetal %></td>
+        <td><%= link_to 'Edit', edit_vegetal_path(vegetal) %></td>
+        <td><%= link_to 'Destroy', vegetal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vegetal', new_vegetal_path %>
